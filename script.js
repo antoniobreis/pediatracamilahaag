@@ -94,3 +94,6 @@ cookieDecline.addEventListener('click', () => {
   localStorage.setItem('cookieChoice', 'declined');
   cookieBanner.classList.remove('visible');
 });
+
+// Ano automático no rodapé
+document.getElementById('ano-atual').textContent = new Date().getFullYear();

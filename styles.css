@@ -381,7 +381,12 @@ ul { list-style: none; }
   margin-bottom: 18px;
 }
 .sobre-text em { color: var(--color-pink-dark); font-style: italic; }
-.sobre-content .btn { margin-top: 16px; }
+.sobre-content .btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  font-size: 0.88rem;
+  justify-content: center;
+}
 
 /* ===========================
    TRAJETÓRIA
