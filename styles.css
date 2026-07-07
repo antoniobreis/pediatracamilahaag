@@ -872,14 +872,23 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     position: fixed;
-    inset: 0;
-    background: var(--color-bg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fffce9;
     align-items: center;
     justify-content: center;
     gap: 28px;
-    z-index: 999;
+    z-index: 1000;
+    overflow: hidden;
   }
-  .nav-menu.open .nav-link { font-size: 1.2rem; color: var(--color-text); }
+
+  .nav-menu.open .nav-link {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
 
   .hamburger { display: flex; }
 
