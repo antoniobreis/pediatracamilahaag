@@ -221,7 +221,7 @@ ul { list-style: none; }
   margin-right: 20px;
 }
 .nav-logo-img {
-  height: 48px;
+  height: 36px;
   width: auto;
   object-fit: contain;
 }
@@ -589,82 +589,199 @@ ul { list-style: none; }
 }
 
 /* ===========================
-   CONVÊNIOS
+   DEPOIMENTOS
 =========================== */
-.convenios {
+.depoimentos {
   padding: 120px 0;
   background: var(--color-white);
 }
 
-.convenios-grid {
+.depoimentos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.convenio-card {
+.depoimento-card {
   background: var(--color-bg);
-  border-radius: var(--radius-card);
-  padding: 40px 36px;
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   transition: all var(--transition);
 }
-.convenio-card:hover {
+
+.depoimento-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+  border-color: var(--color-yellow-dark);
 }
 
-.convenio-topo {
+.depoimento-estrelas {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border);
-}
-.convenio-topo > i { color: var(--color-blue-dark); font-size: 1.3rem; }
-.convenio-topo h3 {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--color-text);
+  gap: 4px;
 }
 
-.convenio-card > p {
-  font-size: 0.9rem;
+.depoimento-estrelas i {
+  color: #f5a623;
+  font-size: 0.95rem;
+}
+
+.depoimento-texto {
+  font-size: 0.93rem;
   color: var(--color-text-light);
   line-height: 1.8;
-  margin-bottom: 22px;
+  flex: 1;
 }
 
-.convenio-card ul   { display: flex; flex-direction: column; gap: 10px; }
-.convenio-card li {
+.depoimento-autor {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--color-text-light);
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
 }
-.convenio-card li > i { color: var(--color-pink-dark); font-size: 0.78rem; }
 
-.convenios-aceitos         { margin-top: 22px; }
-.convenios-aceitos > span {
-  display: block;
-  font-size: 0.72rem;
+.depoimento-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.depoimento-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.depoimento-nome {
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  display: block;
 }
-.convenios-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag {
-  background: var(--color-blue-light);
-  color: var(--color-blue-dark);
+
+.depoimentos-cta {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.google-logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+}
+
+.depoimentos-cta p {
+  font-size: 0.93rem;
+  color: var(--color-text-light);
+  max-width: 460px;
+  line-height: 1.75;
+}
+
+/* Responsivo mobile */
+@media (max-width: 768px) {
+  .depoimentos-cta {
+    padding: 28px 24px;
+  }
+}
+
+.depoimento-fonte {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.depoimento-fonte i {
+  color: #4285F4;
   font-size: 0.8rem;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .depoimentos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   GALERIA
+=========================== */
+.galeria {
+  padding: 120px 0;
+  background: var(--color-bg);
+}
+
+/* Galeria de fotos — todas com altura uniforme e proporção quadrada */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.galeria-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item img:hover {
+  transform: scale(1.04);
+}
+
+/* Primeira foto — ajuste de posição para centralizar melhor o conteúdo */
+.galeria-item:first-child img {
+  object-position: center 30%;
+}
+
+/* Responsivo tablet */
+@media (max-width: 1024px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo mobile */
+@media (max-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
 
 /* ===========================
@@ -725,18 +842,22 @@ ul { list-style: none; }
   gap: 28px;
   text-align: center;
 }
-.footer-name {
-  font-family: var(--font-title);
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: var(--color-white);
-  display: block;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
 }
-.footer-role, .footer-crm {
+.footer-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+.footer-crm {
   display: block;
   font-size: 0.75rem;
   color: rgba(255,255,255,0.4);
-  margin-top: 3px;
 }
 .footer-links {
   display: flex;
@@ -929,7 +1050,7 @@ ul { list-style: none; }
   .atendimento-grid { grid-template-columns: 1fr; }
   .atendimento-destaque { padding: 36px 24px; }
 
-  .para-voce-grid, .convenios-grid { grid-template-columns: 1fr; }
+  .para-voce-grid { grid-template-columns: 1fr; }
 
   .contato-info   { flex-direction: column; gap: 12px; }
   .footer-links   { gap: 14px; }
