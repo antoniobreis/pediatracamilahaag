@@ -1,0 +1,16 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Redirect index.html to root
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [L,R=301]
+
+# Redirect .html to clean URL
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [L,R=301]
+
+# Internally rewrite clean URL to .html file
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
